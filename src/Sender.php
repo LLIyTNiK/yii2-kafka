@@ -1,7 +1,7 @@
 <?php
 
 
-namespace lliytnik\kafka;
+namespace lliytnik\yii2-kafka;
 
 
 class Sender extends Kafka
