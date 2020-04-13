@@ -13,7 +13,7 @@
     "require": {
         "php": ">=5.5.0",
         "yiisoft/yii2": "~2.0.14",
-        "\rdkafka": "*"
+        "php_rdkafka": "*"
     },
     "autoload": {
         "psr-4": {
