@@ -20,9 +20,9 @@
         }
     },
 	"repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/LLIyTNiK/yii2-kafka.git"
-    }
-  ],
+		{
+			"type": "vcs",
+			"url": "https://github.com/LLIyTNiK/yii2-kafka.git"
+		}
+	]
 }
