@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "lliytnik\\kafka\\": "src"
+            "lliytnik\\yii2-kafka\\": "src"
         }
     },
 	"repositories": [
