@@ -15,9 +15,6 @@
         "yiisoft/yii2": "~2.0.14",
         "rdkafka/rdkafka": "*"
     },
-    "suggest": {
-        "rdkafka/rdkafka": "Kafka pecl driver",
-    },
     "autoload": {
         "psr-4": {
             "lliytnik\\kafka\\": "src",
