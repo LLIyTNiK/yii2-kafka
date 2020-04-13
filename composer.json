@@ -1,5 +1,5 @@
 {
-    "name": "lliytnik/kafka",
+    "name": "lliytnik/yii2-kafka",
     "description": "package for using with kafka",
     "type": "yii2-extension",
     "license": "BSD-3-Clause",
