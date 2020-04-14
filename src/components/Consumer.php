@@ -47,7 +47,7 @@ class Consumer extends Kafka
             $messages = $this->topic->consumeBatch (0, 1000,$this->consumeMessageNumber);
             if(!empty($messages)){
                 $this->processMessages($messages);
-                $message = $messages[0];
+                /*$message = $messages[0];
                 switch ($message->err) {
                     case RD_KAFKA_RESP_ERR_NO_ERROR:
                         var_dump($message);
@@ -61,7 +61,7 @@ class Consumer extends Kafka
                     default:
                         throw new \Exception($message->errstr(), $message->err);
                         break;
-                }
+                }*/
             }
 
         }
