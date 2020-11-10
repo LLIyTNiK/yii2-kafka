@@ -35,7 +35,7 @@ class Consumer extends Kafka
 
     public function consumeOne(){
         while (true) {
-            $message = $topic->consume (0, 1000);
+            $message = $this->topic->consume (0, 1000);
             if(!empty($message)){
                 $this->processMessage($message);
             }
