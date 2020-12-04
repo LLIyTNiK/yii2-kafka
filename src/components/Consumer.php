@@ -1,7 +1,7 @@
 <?php
 
 
-namespace lliytnik\kafka\components;
+namespace lliytnik\yii2\kafka\components;
 
 
 class Consumer extends Kafka
@@ -47,46 +47,16 @@ class Consumer extends Kafka
             $messages = $this->topic->consumeBatch (0, 1000,$this->consumeMessageNumber);
             if(!empty($messages)){
                 $this->processMessages($messages);
-                /*$message = $messages[0];
-                switch ($message->err) {
-                    case RD_KAFKA_RESP_ERR_NO_ERROR:
-                        var_dump($message);
-                        break;
-                    case RD_KAFKA_RESP_ERR__PARTITION_EOF:
-                        echo "No more messages; will wait for more\n";
-                        break;
-                    case RD_KAFKA_RESP_ERR__TIMED_OUT:
-                        echo "Timed out\n";
-                        break;
-                    default:
-                        throw new \Exception($message->errstr(), $message->err);
-                        break;
-                }*/
             }
-
         }
     }
 
     public function processMessage($message){
         if($this->messageCallBack){
             ($this->messageCallBack)($message);
-//            switch ($message->err) {
-//                case RD_KAFKA_RESP_ERR_NO_ERROR:
-//                    var_dump($message);
-//                    break;
-//                case RD_KAFKA_RESP_ERR__PARTITION_EOF:
-//                    echo "No more messages; will wait for more\n";
-//                    break;
-//                case RD_KAFKA_RESP_ERR__TIMED_OUT:
-//                    echo "Timed out\n";
-//                    break;
-//                default:
-//                    throw new \Exception($message->errstr(), $message->err);
-//                    break;
-//            }
         }
         else {
-            throw new \Exception("you need to Create new class");
+            throw new \Exception("You need set messageCallBack");
         }
     }
 
@@ -94,7 +64,7 @@ class Consumer extends Kafka
         if($this->messageCallBack){
             ($this->messageCallBack)($messages);
         }else {
-            throw new \Exception("you need to Create new class");
+            throw new \Exception("You need set messageCallBack");
         }
     }
 }

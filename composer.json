@@ -11,12 +11,12 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "php": ">=7.0.0",
+        "php": ">=7.2.0",
         "yiisoft/yii2": "~2.0.14"
     },
     "autoload": {
         "psr-4": {
-            "lliytnik\\kafka\\": "src"
+            "lliytnik\\yii2\\kafka\\": "src"
         }
     },
 	"repositories": [

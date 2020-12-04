@@ -1,8 +1,8 @@
 <?php
 
 
-namespace lliytnik\kafka\components;
-
+namespace lliytnik\yii2\kafka\components;
+use lliytnik\yii2\kafka\components\Kafka;
 
 class Sender extends Kafka
 {
@@ -15,11 +15,20 @@ class Sender extends Kafka
         parent::init();
         $this->producer = new \RdKafka\Producer($this->_conf);
         $this->producer->addBrokers($this->brokers);
-        $this->topic = $this->producer->newTopic($this->topicName);
     }
 
-    public function send($message){
-        $this->topic->produce(RD_KAFKA_PARTITION_UA,0,json_encode($message));
+    public function send($message,$topicName=null){
+        if($topicName){
+            $this->topic = $this->producer->newTopic($this->topicName);
+        }else{
+            $this->topic = $this->producer->newTopic($this->topicName);
+        }
+
+        $this->topic->produce(RD_KAFKA_PARTITION_UA,0,json_encode([
+            'body' => serialize($message),
+            'properties' => [],
+            'headers' => [],
+        ]));
         $this->producer->poll(0);
         for ($flushRetries = 0; $flushRetries < $this->resendNum; $flushRetries++) {
             $result = $this->producer->flush($this->flushTimeout);

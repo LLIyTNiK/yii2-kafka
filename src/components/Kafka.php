@@ -1,7 +1,7 @@
 <?php
 
 
-namespace lliytnik\kafka\components;
+namespace lliytnik\yii2\kafka\components;
 
 
 use yii\base\Component;
