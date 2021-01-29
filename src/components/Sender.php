@@ -57,7 +57,7 @@ class Sender extends Kafka
     }
 
     public function saveToFile($attrs, $fileName,$is_event=true){
-        $folder = \Yii::getAlias('@console').$this->failFilePath;
+        $folder = \Yii::getAlias('@console').$this->failFolderPath;
         $fileName = $folder.time().'_'.($is_event?'event':'save_data_to').'_'.$fileName.rand(0,10000).'.csv';
         while(!$fHandle = fopen($fileName,'x')){
             $fileName = $folder.time().'_'.($is_event?'event':'save_data_to').'_'.$fileName.rand(0,10000).'.csv';
